@@ -2,3 +2,5 @@ openai-whisper
 pyaudio
 numpy
 torch
+deepmultilingualpunctuation
+pyannote.audio
