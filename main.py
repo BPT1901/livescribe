@@ -18,7 +18,7 @@ FORMAT = pyaudio.paInt16
 MODEL_NAME = "large-v3"
 
 # HuggingFace token for speaker diarization
-HF_TOKEN = "your_token_here"  # Replace with your actual token
+HF_TOKEN = ""  # Replace with your actual token
 
 # Prompt for output filename
 TRANSCRIPT_FILE = input("Enter the filename for your transcription (e.g meeting_notes.txt): ").strip()
