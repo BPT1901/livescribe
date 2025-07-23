@@ -1,0 +1,7 @@
+openai-whisper
+pyaudio
+numpy
+torch
+deepmultilingualpunctuation
+pyannote.audio
+pyannote.metrics
