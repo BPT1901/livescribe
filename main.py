@@ -220,18 +220,21 @@ def main():
                 t = threading.Thread(target=spinner, args=(stop_event,))
                 t.start()
 
-                # Run transcription
-                result = model.transcribe(
-                    TEMP_AUDIO_FILE,
-                    language='en',
-                    temperature=0,
-                    beam_size=5
-                )
+                try:
+                    # Run transcription
+                    result = model.transcribe(
+                        TEMP_AUDIO_FILE,
+                        language='en',
+                        temperature=0,
+                        beam_size=5
+                    )
+                finally:
+                    # Always stop the spinner, even if Ctrl+C fires mid-transcription
+                    stop_event.set()
+                    t.join()
+                    print("\r" + " " * 30 + "\r", end="", flush=True)
 
-                # Stop spinner
-                stop_event.set()
-                t.join()
-                print("\rTranscribing... done!        ")
+                print("Transcribing... done!")
 
                 text = result['text'].strip()
 
