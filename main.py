@@ -164,12 +164,12 @@ def main():
 
     # Prompt for output filename
     try:
-        filename_input = input("Enter the filename for your transcription (e.g. meeting_notes.txt): ").strip()
+        filename_input = input("Enter the filename for your transcription (e.g. meeting_notes): ").strip()
         if filename_input == "":
             timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
             TRANSCRIPT_FILE = f"transcription_{timestamp}.txt"
         else:
-            TRANSCRIPT_FILE = filename_input
+            TRANSCRIPT_FILE = filename_input if filename_input.endswith('.txt') else f"{filename_input}.txt"
     except EOFError:
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         TRANSCRIPT_FILE = f"transcription_{timestamp}.txt"

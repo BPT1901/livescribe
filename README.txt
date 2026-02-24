@@ -15,7 +15,7 @@ RUNNING THE TRANSCRIBER:
 
 You will be prompted:
 
-   Enter the filename for your transcription (e.g. meeting_notes.txt):
+   Enter the filename for your transcription (e.g. meeting_notes):
 
 Enter a filename or press Enter to auto-generate one with a timestamp.
 
